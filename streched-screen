@@ -1,0 +1,14 @@
+-- 66Y Script
+getgenv().Resolution = {
+    [".gg/66y"] = 0.50  -- هنا غير قيمتة اذا تريد قوي حطه 0.25 وتحت اذا عادي حطه 0.50
+}
+
+local Camera = workspace.CurrentCamera
+if getgenv().gg_scripters == nil then
+    game:GetService("RunService").RenderStepped:Connect(
+        function()
+            Camera.CFrame = Camera.CFrame * CFrame.new(0, 0, 0, 1, 0, 0, 0, getgenv().Resolution[".gg/66y"], 0, 0, 0, 1)
+        end
+    )
+end
+getgenv().gg_scripters = ".gg/66y"
